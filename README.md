@@ -16,7 +16,8 @@ This guide requires following:
 Type ```make run```
     * To change the map and config you can change the example files in the ```examples``` directory according to this readme.
 
-
+# Doxygen documentation
+Documantatin in html is accessible at [project GitHub site](https://pavelkriz.github.io/Configurable-Pacman/)
 ## School assignment from Progtest (includes some explanation about the game - translated from Czech with Google Translator)
 
 
