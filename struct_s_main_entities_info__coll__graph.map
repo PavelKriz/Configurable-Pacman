@@ -1,0 +1,4 @@
+<map id="SMainEntitiesInfo" name="SMainEntitiesInfo">
+<area shape="rect" id="node2" href="$struct_s_main_entity_info.html" title="Structure holds informations important for some entities behaviour. " alt="" coords="11,160,125,237"/>
+<area shape="rect" id="node3" href="$struct_s_coordinates.html" title="A structure that represents coordinates in 2d space. " alt="" coords="17,5,119,97"/>
+</map>

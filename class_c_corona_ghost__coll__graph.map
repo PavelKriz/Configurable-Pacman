@@ -1,0 +1,6 @@
+<map id="CCoronaGhost" name="CCoronaGhost">
+<area shape="rect" id="node2" href="$class_c_ghost.html" title="A class that represents ghost in the game, it solves common problems of all ghosts in its methods..." alt="" coords="126,461,295,729"/>
+<area shape="rect" id="node3" href="$class_c_moving_object.html" title="A class that is ancestor of all moving objects in a game. " alt="" coords="5,219,176,384"/>
+<area shape="rect" id="node4" href="$class_c_map_1_1_c_map_coordinates.html" title="Class that represents coordinates in a (CMap) map. " alt="" coords="5,5,176,156"/>
+<area shape="rect" id="node5" href="$struct_s_coordinates.html" title="A structure that represents coordinates in 2d space. " alt="" coords="200,255,301,347"/>
+</map>

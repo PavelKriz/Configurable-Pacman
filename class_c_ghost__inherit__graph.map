@@ -1,0 +1,8 @@
+<map id="CGhost" name="CGhost">
+<area shape="rect" id="node3" href="$class_c_corona_ghost.html" title="CCoronaGhost is class that represents special ghost that is hard to beat in the game. " alt="" coords="5,564,172,685"/>
+<area shape="rect" id="node4" href="$class_c_purple_ghost.html" title="CPurpleGhost is class that represents purple ghost. " alt="" coords="196,564,363,685"/>
+<area shape="rect" id="node5" href="$class_c_red_ghost.html" title="CRedGhost is class that represents Red Ghost. " alt="" coords="387,564,553,685"/>
+<area shape="rect" id="node6" href="$class_c_siena_ghost.html" title="CSienaGhost is class that represents Siena Ghost. " alt="" coords="577,564,744,685"/>
+<area shape="rect" id="node7" href="$class_c_turquoise_ghost.html" title="{CTurquoiseGhost\n||+ CTurquoiseGhost()\l+ move()\l+ getObjectInfo()\l# getTargetCoordinates()\l}" alt="" coords="768,564,935,685"/>
+<area shape="rect" id="node2" href="$class_c_moving_object.html" title="A class that is ancestor of all moving objects in a game. " alt="" coords="385,5,555,171"/>
+</map>

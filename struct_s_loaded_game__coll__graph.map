@@ -1,0 +1,5 @@
+<map id="SLoadedGame" name="SLoadedGame">
+<area shape="rect" id="node2" href="$struct_s_game_parameters.html" title="Game parameters are all the parameters loaded from config file. " alt="" coords="5,160,199,311"/>
+<area shape="rect" id="node3" href="$struct_s_game_object_info.html" title="Struct holds info about the game objects. " alt="" coords="223,189,349,281"/>
+<area shape="rect" id="node4" href="$struct_s_coordinates.html" title="A structure that represents coordinates in 2d space. " alt="" coords="235,5,337,97"/>
+</map>

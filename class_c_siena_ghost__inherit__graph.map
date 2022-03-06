@@ -1,0 +1,4 @@
+<map id="CSienaGhost" name="CSienaGhost">
+<area shape="rect" id="node2" href="$class_c_ghost.html" title="A class that represents ghost in the game, it solves common problems of all ghosts in its methods..." alt="" coords="6,219,175,516"/>
+<area shape="rect" id="node3" href="$class_c_moving_object.html" title="A class that is ancestor of all moving objects in a game. " alt="" coords="5,5,176,171"/>
+</map>
