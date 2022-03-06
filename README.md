@@ -1,7 +1,23 @@
 Semester work on Pac-Man {#mainpage}
 ============
+# Requirements
+* SDL2 and SDL_image 2.0 libraries
+    * On debian style linux can be instalel by ```sudo apt-get install libsdl2-dev``` and ```sudo apt-get install libsdl2-image-dev```
 
-## School assignment from Progtest
+# Installation
+This guide requires following:
+    * g++
+    * make
+
+1. Clone the project
+2. Open terminal
+3. Type and run ```make```
+# Run
+Type ```make run```
+    * To change the map and config you can change the example files in the ```examples``` directory according to this readme.
+
+
+## School assignment from Progtest (includes some explanation about the game - translated from Czech with Google Translator)
 
 
 Implement the classic Pacman game against the computer (you can implement other variants as well).
@@ -102,6 +118,7 @@ The map always needs to be loaded from a text file.
 
 Sample map:
 
+```
 \ - \ - \ - \ - \ - \ - \ - <br/>
 | ##. ## | <br/>
 | # ... # | <br/>
@@ -111,6 +128,7 @@ Sample map:
 | # ... # | <br/>
 | ## @ ## | <br/>
 \ - \ - \ - \ - \ - \ - \ - <br/>
+```
 
 Each map must be delimited by characters (- and |) as shown in the example. The inner field of this "pen" must be filled with characters from the following set of characters:
 
@@ -126,6 +144,7 @@ The minimum map size is 3x3.
 
 If the above rules are followed, there is no problem with loading the game. However, loading maps is tolerant and it is possible to create, for example, a file where the maps are counted one after the other and only the first one is used. It is important to have the individual elements behind you and not to use the signs of the pen outside the use in the pen.
 
+```
 \ - \ - \ - \ - \ - \ - \ - Any ascii characters can be outside the fence <br/>
 | ##. ## | <br/>
 | # ... # | <br/>
@@ -136,23 +155,26 @@ even here there may be characters, this is not a map interruption <br/>
 | # ... # | <br/>
 | ## @ ## | <br/>
 \ - \ - \ - \ - \ - \ - \ -
+```
 
+```
 \ - \ - \ - \ - \ - \ - \ - | ##. ## || # ... # || #. # G # | this is how you can create a map <br/>
 | # P # X # || #. # G # | <br/>
 | # ... # || ## @ ## | \ - \ - \ - \ - \ - \ - \ -
+```
 
 ##### File inputs
 The configuration file always needs to be loaded from a text file.
 
 Configuration file format (example)
 
-
+```
 0 // game mode 0 for normal, 1 for hard, 2 for random
 50 // ghost speed percentage, possible values ​​= 50 - 200
 15 // default neutral time length, possible values ​​= 1 - 60
 15 // default hunt on ghosts time length, possible values ​​= 1 - 60
 15 // default hunt on player time length, possible values ​​= 1 - 60
 60 // probability of moving bonus spawn, possible values ​​= 0 - 100 (0 makes bigger probability then 100)
-
+```
 
 There can be any ascii characters in the file, except that the individual parameters must be specified at the beginning of the lines, as shown in the example (lines with parameters must follow each other and start on the first line)
