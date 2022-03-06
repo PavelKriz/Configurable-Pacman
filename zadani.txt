@@ -1,163 +1,158 @@
-Semestrální práce na téma hry Pac-Man                        {#mainpage}
+Semester work on Pac-Man {#mainpage}
 ============
 
-## Školní zadání z Progtestu
+## School assignment from Progtest
 
 
-Implementujte klasickou hru Pacman proti počítači (můžete naimplementovat i jiné varianty).
+Implement the classic Pacman game against the computer (you can implement other variants as well).
 
-Hra musí splňovat následující funkcionality:
+The game must have the following functionalities:
 
-1.    Dodržování základních pravidel, sbírání bonusů, míncí (teček), třešniček, teleporty, atp.
-    Je implementováno několik druhů AI duchů (fungující i zároveň - např. duchové se liší barvou, znakem).
-2.    Lze načítat mapy ze souboru (bludiště + pozice bonusů a duchů).
-3.    Konfigurovatelná obtížnost hry ze souboru (rychlost duchů, délka trvání jednotlivých módů hry, pravděpodobnost přidání nového bonusu do mapy, ...)
-4.    Škálovatelná obtížnost duchů (více strategií duchů dle obtížnost, dle různého chování)
+1. Adherence to basic rules, collecting bonuses, mints (dots), cherries, teleports, etc.
+    Several types of AI ghosts are implemented (working at the same time - eg ghosts differ in color, character).
+2. Maps can be loaded from a file (maze + bonus and ghost positions).
+3. Configurable difficulty of the game from the file (speed of ghosts, duration of individual game modes, probability of adding a new bonus to the map, ...)
+4. Scalable ghost difficulty (multiple ghost strategies by difficulty, by different behavior)
 
-Kde lze využít polymorfismus? (doporučené)
+Where can polymorphism be used? (recommended)
 
-    Rozdělení hráčů: hráč, duch (různé druhy umělé inteligence)
-    Mód hry: klasický (duchové chodí dle svých strategií), zběsilý (duchové pronásledují hráče), nezranitelný (duchové jsou pomalejší, dají se zabít)
-    Herní políčko: zem, stěna, bod, bonus (změna módu), třešnička (více bodů), teleport
-    Uživatelské rozhraní: konzole, ncurses, SDL, OpenGL (různé varianty), ...
+    Distribution of players: player, spirit (different types of artificial intelligence)
+    Game mode: classic (ghosts walk according to their strategies), furious (ghosts chase players), invulnerable (ghosts are slower, they can be killed)
+    Game field: ground, wall, point, bonus (change mode), cherry (more points), teleport
+    User interface: console, ncurses, SDL, OpenGL (various variants), ...
 
-Další informace
+More information
 
     https://cs.wikipedia.org/wiki/Pac-Man
     http://programujte.com/clanek/2011010500-chovani-duchu-ve-hre-pac-man-cast-1/
     http://programujte.com/clanek/2011010900-chovani-duchu-ve-hre-pac-man-cast-2/
     
     
-## Bližší specifikace zadání
+## Detailed specification of the assignment
 
 
-( označení [1]-[4] se odkazuje na jednotlivé povinné body ze zadání)
+(designation [1] - [4] refers to individual mandatory points from the assignment)
 
-Chování hry a její podoba bude podobná klasické hře Pac-Man( jako reference hry Pac-Man se bere popis pravidel hry dostupný skrz odkazy ve školním zadání)[1]. Hra bude umožňovat minimálně dva herní módy. Jiný než základní mód se však v podobě od klasické hry může lišit. Hra bude implementována pomocí grafického rozhraní.
+The behavior of the game and its appearance will be similar to the classic game Pac-Man (as a reference to the game Pac-Man is taken a description of the rules of the game available through the links in the school assignment) [1]. The game will allow at least two game modes. However, the non-basic mode may differ in form from the classic game. The game will be implemented using a graphical interface.
 
-Hra se bude odehrávat na předem stanovené mapě, na které se budou nacházet herní objekty. Mapu půjde načítat ze souboru[2]. Další vlastnosti bude také možné nastavit pomocí konfiguračního souboru( bude možné upravit všechny parametry ze školního zadání)[3]. Pomocí tohoto konfiguračního souboru také bude možné nastavit mód hry. Mód hry bude určovat chování duchů a tím i jejich obtížnost[4]. Oba soubory budou mít předem definovaný platný formát.
+The game will take place on a predetermined map on which the game objects will be located. The map will load from file [2]. It will also be possible to set other properties using a configuration file (it will be possible to modify all parameters from the school assignment) [3]. It will also be possible to set the game mode using this configuration file. The mode of play will determine the behavior of ghosts and thus their difficulty [4]. Both files will have a predefined valid format.
 
-#### Popis pohyblivých herních objektů[1]:
-Hráč( Pac-Man, pohyb ovládán hráčem)
-Čtyři různí duchové( s chováním podle klasických pravidel, pohybuje se)
-Pohybující se bonus( pokud ho hráč sebere, přičte hráči skóre, v klasické hře třešnička pohybuje se)
+#### Description of moving game objects [1]:
+Player (Pac-Man, movement controlled by the player)
+Four different ghosts (behaving according to classic rules, moves)
+Moving bonus (if the player picks it up, it adds a score to the player, in the classic game the cherry moves)
 
-#### Bonusy které mohou být sebrány hráčem[1]:
-Malý bonus( pokud ho hráč sebere, přičte hráči skóre, nepohybuje se)
-Větší bonus( pokud ho hráč sebere, umožní hráči zabytí duchů po určitou dobu, nepohybuje se)
-Pohybující se bonus...
+#### Bonuses that can be collected by the player [1]:
+Small bonus (if the player picks it up, it adds a score to the player, it doesn't move)
+Bigger bonus (if the player picks it up, it allows the player to capture ghosts for a while, it doesn't move)
+Moving bonus ...
 
-#### Herní pole na mapě:
-Zeď( objekt přes který nelze projít)
-Brána( objekt přes který mohou projít jen duchové)
-Prázdné políčko( běžný objekt volný k pohybu pohybujících se objektů)
+#### Game field on the map:
+Wall (object that cannot be passed)
+Gate (an object through which only ghosts can pass)
+Empty box (normal object free to move moving objects)
 
-Teleport na druhou stranu mapy bude také možný[1]( v případech kdy to klasická pravidla hry umožňují).
-
-
-## Již provedená implementace a návrh
+Teleporting to the other side of the map will also be possible [1] (in cases where the classic rules of the game allow it).
 
 
-V průběhu implementování hry je záměr hlavně na implementace nezbytné základní kostry hry. Později dojde k rozšíření dalších funkčností do specifikovaného rozsahu. Některé prvky mohou tak například chybět( například by to mohla být extra třída pro speciální chování ducha mimo základní duchy ze hry Pac-man). Jelikož hra není zdaleka dokončena, tak se existující implementace, pokud je, nachází ve stavu prototypu. Některé části implementace jsou čistě pro umožnění kompilace dokončené části prototypu. Metody které jsou v hlavičkových souborech navíc jsou označeny komentářem TEST.
+## Implementation and design already done
 
 
-## Polymorfismus
+During the implementation of the game, the intention is mainly to implement the necessary basic skeleton of the game. Later, other functionalities will be extended to the specified range. For example, some elements may be missing (for example, it could be an extra class for special ghost behavior outside the basic ghosts of Pac-man). Since the game is far from complete, the existing implementation, if any, is in the prototype state. Some parts of the implementation are purely to allow compilation of the completed part of the prototype. Additionally, methods that are in the header files are marked with a TEST comment.
 
 
-Polymorfismus bude využit v různém chování duchů. To se týká třídy CGhost a dalších jejích potomků( CRedGhost, CTurqoiseGhost, CSienaGhost, CPurpleGhost). Jako ilustrace byl přiložen jednoduchý návrh tříd, kde byl využit polymorfismus.
+## Polymorphism
 
-#### Metody kde bude polymorfismus u duchů využit:
 
-##### Metoda move
-Deklarace metody z návrhu:\
-virtual SCoordinates move(const CMap &map, const SCoordinates &playerCoords, const CGameInfo &gameInfo) = 0;
+Polymorphism will be used in different ghost behavior. This applies to the CGhost class and its other descendants (CRedGhost, CTurqoiseGhost, CSienaGhost, CPurpleGhost). A simple design of classes using polymorphism was attached as an illustration.
 
-Metoda spustí pohyb ducha po mapě a navrátí novou pozici ducha po přesunu. To umožní každému duchovi chovat se přesně podle jeho vlastností. Je tak snadné implementovat různé druhy duchů.
+#### Methods where polymorphism will be used in ghosts:
 
-##### Metoda getObjectInfo
-Deklarace metody z návrhu:\
-virtual SGameObjectInfo getObjectInfo() const = 0;
+##### Move method
+Design method declaration: \
+virtual SCoordinates move (const CMap & map, const SCoordinates & playerCoords, const CGameInfo & gameInfo) = 0;
 
-Metoda vrátí základní herní informace o herním objektu( v tomto případu duchovi). SGameObjectInfo je struktura pomocí které se v aplikaci předávájí data. Například je taková struktura předávána třídě CView, která se stará o GUI.
+The method starts moving the ghost on the map and returns the new position of the ghost after the move. This will allow each ghost to behave exactly according to its characteristics. It's so easy to implement different types of ghosts.
 
-##### Zdůvodnění umístění polymorfismu
-Hlavním smyslem více herních módů je umožnění větší rozmanitosti chování nebo druhů duchů. Polymorfismus bude využit právě proto u duchů.\
-Pohybující se bonus( CMovingBonus) a hráč( CPlayer) nejsou přes podobnost do tohoto polymorfismu zahrnuti protože jejich metody se stejnou funkčností vyžadují méně argumentů. Jejich výskyt je navíc pouze vždy maximálně jeden. 
+##### getObjectInfo method
+Design method declaration: \
+virtual SGameObjectInfo getObjectInfo () const = 0;
 
-## Ovládání hry
+The method returns basic game information about the game object (in this case, the ghost). SGameObjectInfo is a structure through which data is passed in the application. For example, such a structure is passed to the CView class, which takes care of the GUI.
 
-### Klávesové vstupy
-Pacman (hráč) se pohybuje klávesovými "šipkami". Při zvolení nějakého nového směru, je tento směr zapamatován a v nejbližším možném místě využit jako nový směr pohybu, lze tak naplánovat odbočení dopředu.
+##### Rationale for polymorphism location
+The main purpose of multiple game modes is to allow for a greater variety of behaviors or ghost types. That's why the polymorphism will be used by ghosts.
+Despite the similarity, the Moving Bonus (CMovingBonus) and the Player (CPlayer) are not included in this polymorphism because theirmethods with the same functionality require fewer arguments. In addition, their occurrence is always only a maximum of one.
 
-Při prohře lze spustit nová hra stisknutím klávesy enter.
+## Game controls
 
-### Spuštění hry
+### Key inputs
+Pacman (player) moves with the arrow keys. When selecting a new direction, this direction is memorized and used as a new direction of movement in the nearest possible place, so it is possible to schedule a turn forward.
 
-Způsob volání hry:\
-[název programu] [cesta ke konfiguračnímu souboru] [cesta ke mapovému souboru]
-Složka ze které je hra spouštěna musí obsahovat platný adresář images s texturami, jinak se hra nespustí.
+When losing, you can start a new game by pressing the enter key.
 
-##### Mapa ze souboru
-Mapu je vždy potřeba načíst z textového souboru.
+### Starting the game
 
-Ukázková mapa:
+Game call method: \
+[program name] [path to configuration file] [path to map file]
+The folder from which the game is started must contain a valid directory of textured images, otherwise the game will not start.
 
-\-\-\-\-\-\-\-<br/>
-|##.##|<br/>
-|#...#|<br/>
-|#.#G#|<br/>
-|#P#X#|<br/>
-|#.#G#|<br/>
-|#...#|<br/>
-|##@##|<br/>
-\-\-\-\-\-\-\-<br/>
+##### Map from file
+The map always needs to be loaded from a text file.
 
-Každá mapa musí být ohraničena znaky (- a |) tak jak je ukázáno na ukázce. Vnitřní pole této "ohrádky" musí být vyplňeno znaky z následující množiny znaků:
+Sample map:
 
- ' ' pro prázdné políčko (0 až více)<br/>
- '#' pro zeď (0 až více)<br/>
- 'X' pro bránu, kterou projdou pouze duchové (0 až více)<br/>
- 'P' pro hráče (právě 1)<br/>
- 'G' pro ducha (alespoň 1!)<br/>
- '.' pro základní bonus (alespoň 1!)<br/>
- '@' pro bonus umožňující hráči zabíjet duchy (0 až více)<br/>
+\ - \ - \ - \ - \ - \ - \ - <br/>
+| ##. ## | <br/>
+| # ... # | <br/>
+| #. # G # | <br/>
+| # P # X # | <br/>
+| #. # G # | <br/>
+| # ... # | <br/>
+| ## @ ## | <br/>
+\ - \ - \ - \ - \ - \ - \ - <br/>
+
+Each map must be delimited by characters (- and |) as shown in the example. The inner field of this "pen" must be filled with characters from the following set of characters:
+
+ '' for an empty field (0 to more) <br/>
+ '#' for wall (0 to more) <br/>
+ 'X' for a gate through which only ghosts pass (0 to more) <br/>
+ 'P' for players (just 1) <br/>
+ 'G' for ghost (at least 1!) <br/>
+ '.' for a basic bonus (at least 1!) <br/>
+ '@' for a bonus allowing players to kill ghosts (0 to more) <br/>
  
-Minimální velikost mapy je 3x3.
+The minimum map size is 3x3.
 
-V případě dodržení výše daných pravidel není problém s načtením hry. Načítání map je však tolerantní a jde vytvořit například takový soubor, kdy se mapy zčítají za sebe a je použita pouze první. Podstatné je mít za sebou jednotlivé prvky a nepoužívat znaky ohrádky mimo použití v ohrádce.
+If the above rules are followed, there is no problem with loading the game. However, loading maps is tolerant and it is possible to create, for example, a file where the maps are counted one after the other and only the first one is used. It is important to have the individual elements behind you and not to use the signs of the pen outside the use in the pen.
 
-\-\-\-\-\-\-\- mimo ohradku mohou byt jakekoli ascii znaky<br/>
-|##.##|<br/>
-|#...#|<br/>
-|#.#G#|<br/>
-|#P#X#|i zde<br/>
-|#.#G#|<br/>
-i zde takto mohou byt znaky, nejedna se o preruseni mapy<br/>
-|#...#|<br/>
-|##@##|<br/>
-\-\-\-\-\-\-\-
+\ - \ - \ - \ - \ - \ - \ - Any ascii characters can be outside the fence <br/>
+| ##. ## | <br/>
+| # ... # | <br/>
+| #. # G # | <br/>
+| # P # X # | also here <br/>
+| #. # G # | <br/>
+even here there may be characters, this is not a map interruption <br/>
+| # ... # | <br/>
+| ## @ ## | <br/>
+\ - \ - \ - \ - \ - \ - \ -
 
-\-\-\-\-\-\-\-|##.##||#...#||#.#G#| i takto lze vytvorit mapu<br/>
-|#P#X#||#.#G#|<br/>
-|#...#||##@##|\-\-\-\-\-\-\-
+\ - \ - \ - \ - \ - \ - \ - | ##. ## || # ... # || #. # G # | this is how you can create a map <br/>
+| # P # X # || #. # G # | <br/>
+| # ... # || ## @ ## | \ - \ - \ - \ - \ - \ - \ -
 
-##### Souborové vstupy
-Konfigurační soubor je vždy potřeba načíst z textového souboru.
+##### File inputs
+The configuration file always needs to be loaded from a text file.
 
-Formát konfiguračního souboru (příklad)
+Configuration file format (example)
 
 
 0 // game mode 0 for normal, 1 for hard, 2 for random
-50 // ghost speed percentage, possible values =  50 - 200
-15 // default neutral time length, possible values = 1 - 60
-15 // default hunt on ghosts time length, possible values = 1 - 60
-15 // default hunt on player time length, possible values = 1 - 60
-60 //probability of moving bonus spawn, possible values = 0 - 100 (0  makes bigger probability then 100)
+50 // ghost speed percentage, possible values ​​= 50 - 200
+15 // default neutral time length, possible values ​​= 1 - 60
+15 // default hunt on ghosts time length, possible values ​​= 1 - 60
+15 // default hunt on player time length, possible values ​​= 1 - 60
+60 // probability of moving bonus spawn, possible values ​​= 0 - 100 (0 makes bigger probability then 100)
 
 
-V souboru mohou být libovolné ascii znaky, s tou vyjímkou že na začátcích řádků musí být uvedeny jednotlivé parametry, tak jak je to uvedeno v příkladu (řádky s parametry musí jít za sebou a začínát na první řádku)
-
-
-
-
-
+There can be any ascii characters in the file, except that the individual parameters must be specified at the beginning of the lines, as shown in the example (lines with parameters must follow each other and start on the first line)
