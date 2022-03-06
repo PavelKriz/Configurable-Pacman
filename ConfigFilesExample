@@ -1,0 +1,33 @@
+-------------------------
+|#######################|
+|#GGGG#                #|
+|#    #        #       #|
+|#    #     P ###      #|
+|###X##         ###    #|
+|#            ....     #|
+|#    ........   ###   #|
+|#               # #   #|
+|#      @ @ @    ###   #|
+|#                     #|
+|#######################|
+-------------------------
+// VALID map example
+// '-' and '|' borders of map
+// '#' wall
+// ' ' empty
+// 'X' gate
+// '.' basic bonus
+// '@' killer bonus
+// 'P' pacman/player
+// 'G' ghost
+
+CONFIG FILE:
+BEGINNING:
+0 // game mode 1 - normal
+50 - 200 // ghost speed percentage
+1 - 60 // default neutral time length
+1 - 60 // default hunt on ghosts time length
+1 - 60 // default hunt on player time length
+0 - 100 //probability of moving bonus spawn - lower means bonus is genereted in lesser time, higher in longer time (100 means never)
+
+

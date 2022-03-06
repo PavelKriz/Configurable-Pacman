@@ -1,0 +1,22 @@
+0 // game mode 0 - normal, 1 - hard, 2 - random
+75 // ghost speed percentage
+10 // default neutral time length
+10 // default hunt on ghosts time length
+20 // default hunt on player time length
+10 //probability of moving bonus spawn - 0  makes bigger probability then 100
+
+
+1 // game mode 0 - normal, 1 - hard, 2 - random
+100 // ghost speed percentage
+1 // default neutral time length
+15 // default hunt on ghosts time length
+15 // default hunt on player time length
+30 //probability of moving bonus spawn - 0  makes bigger probability then 100
+
+
+2 // game mode 0 - normal, 1 - hard, 2 - random
+50 // ghost speed percentage
+5 // default neutral time length
+5 // default hunt on ghosts time length
+5 // default hunt on player time length
+100 //probability of moving bonus spawn - 0  makes bigger probability then 100
