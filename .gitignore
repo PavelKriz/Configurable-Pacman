@@ -1,4 +1,5 @@
 *.o
 pacman
+!examples/images/pacman
 doc
 
